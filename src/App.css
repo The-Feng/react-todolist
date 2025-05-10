@@ -1,38 +1,139 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 300 14px / 1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main {
+  width: 550px;
+  margin: 0 auto;
+}
+
+.todos h1 {
+  font-size: 80px;
+  font-weight: 200;
   text-align: center;
+  color: #b83f45;
+  line-height: 142px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todos-list {
+  background: #fff;
+  margin: 0 0 40px;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 25px 50px 0 rgba(0, 0, 0, .1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-todo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 16px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.new-todo {
+  flex: 1;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, .003);
+  border: none;
+  outline:medium;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit, .new-todo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.choose-all {
+  transform: rotate(90deg);
+}
+
+.choose-all:before {
+  content: "❯";
+  font-size: 22px;
+  color: #e6e6e6;
+  padding: 10px 27px;
+}
+
+.footer {
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 15px;
+  border-top: 1px solid #e6e6e6;
+  box-shadow: rgba(0, 0, 0, .2) 0 1px 1px, #f6f6f6 0 8px 0 -3px, rgba(0, 0, 0, .2) 0 9px 1px -3px, #f6f6f6 0 16px 0 -6px, rgba(0, 0, 0, .2) 0 17px 2px -6px;
+}
+
+.footer:after {
+    content: '.';
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.todo-count {
+  float: left;
+  text-align: left;
+}
+
+.filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.filters li {
+  display: inline;
+}
+
+.filters li a.selected {
+  border-color: rgba(175, 47, 47, .2);
+}
+.filters li a {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.clear-completed, html .clear-completed:active {
+    float: right;
+    position: relative;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: 0 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
